@@ -1,126 +1,147 @@
 using UnityEngine;
-using System.Collections;
 
 [RequireComponent(typeof(AudioSource))]
-public class Bitcrusher : MonoBehaviour
+public class BitCrusherEffect : MonoBehaviour // Removed IAudioEffectPlugin as it's not standard Unity and likely from an asset/custom setup.
+                                            // If you need IAudioEffectPlugin, add it back and implement its methods if necessary.
 {
-    [Header("Bitcrusher Settings")]
+    [Header("Bit Crusher Settings")]
 
-    [Tooltip("Number of bits to represent audio amplitude (1-16). Lower values are more distorted.")]
+    [Tooltip("Target bit depth. Lower values increase quantization noise. 12 is a starting point for SNES-like feel.")]
     [Range(1, 16)]
-    public int bitdepth = 8; // Default to 8-bit
+    public int bitDepth = 12; // DEFAULT: Aiming for SNES-like quality (less than perfect 16-bit due to console limitations/compression)
 
-    [Tooltip("Factor by which to reduce the sample rate (1 = no reduction). Higher values sound more 'grainy'.")]
-    [Range(1, 50)] // Increased range for more extreme effects
-    public int sampleRateReduction = 1; // Default to no reduction
+    [Tooltip("Reduces effective sample rate. 1.0 = no reduction. 0.5 = half rate. ~0.66 aims for SNES-like ~32kHz from 48kHz source.")]
+    [Range(0.01f, 1f)]
+    public float sampleRateReductionFactor = 0.66f; // DEFAULT: Aiming for ~32kHz (SNES) from a 48kHz source rate. Adjust if your source rate differs.
 
-    [Tooltip("Volume multiplier for the processed (wet) signal.")]
-    [Range(0.0f, 1.0f)]
-    public float volume = 1.0f; // Default to full volume for the effect
+    private float stepSizeReciprocal; // Pre-calculate 1.0f / stepSize for efficiency
+    private float lastSampleValueL;   // Store last sample per channel if needed
+    private float lastSampleValueR;   // Store last sample per channel if needed
+    private int downsampleCounter;
+    private int downsampleInterval;
 
-    [Tooltip("Mix between original (Dry) and processed (Wet) signal. 0 = Dry, 1 = Wet.")]
-    [Range(0.0f, 1.0f)]
-    public float dryWet = 1.0f; // Default to fully wet (only effect is heard)
-
-    // Internal variables for processing
-    private float step; // The quantization step based on bitdepth
-    private float[] lastSample; // Holds the last processed sample for sample rate reduction (per channel)
-    private int currentSampleIndex = 0; // Counter for sample rate reduction
+    // We don't need SetSampleRate or originalSampleRate if we calculate based on AudioSettings.outputSampleRate
+    // The IAudioEffectPlugin interface methods are removed unless you specifically need them for your plugin framework.
 
     void Awake()
     {
-        // Initialize lastSample array - will be resized if needed in OnAudioFilterRead
-        lastSample = new float[2]; // Assume stereo initially, will adapt
+        // It's often better to calculate based on the actual output sample rate
+        UpdateDownsampleInterval();
+        UpdateStepSize();
     }
 
-    // --- Preset Function ---
-    [ContextMenu("Set 16-Bit Preset")]
-    void Set16BitPreset()
-    {
-        // Values inspired by SNES/Genesis era - often not true 16-bit/44.1kHz CD quality
-        bitdepth = 10;             // Slightly reduced bit depth for character
-        sampleRateReduction = 2;   // Simulate lower console sample rates (e.g., ~22-32kHz)
-        volume = 0.85f;            // Slightly reduce volume to prevent clipping potentially caused by quantization
-        dryWet = 1.0f;             // Fully wet for the effect
-        Debug.Log("Bitcrusher: 16-Bit Preset Applied (Bitdepth: 10, Rate Reduction: 2, Volume: 0.85, Mix: 1.0)");
-
-        // Ensure internal step value updates if the script is running
-        CalculateStep();
-    }
-
-    // Calculate the quantization step based on current bitdepth
-    void CalculateStep()
-    {
-        step = Mathf.Pow(2, bitdepth);
-    }
-
-    // This function is called by Unity whenever the AudioSource needs audio data
-    void OnAudioFilterRead(float[] data, int channels)
-    {
-        // Recalculate step value if bitdepth changed
-        // (Optimization: could check if bitdepth actually changed, but calculation is cheap)
-        CalculateStep();
-
-        // Ensure the lastSample array matches the number of channels
-        if (lastSample == null || lastSample.Length != channels)
-        {
-            lastSample = new float[channels];
-        }
-
-        // Process each sample in the buffer
-        for (int i = 0; i < data.Length; i += channels)
-        {
-            // --- Sample Rate Reduction ---
-            currentSampleIndex++;
-            if (currentSampleIndex >= sampleRateReduction)
-            {
-                currentSampleIndex = 0; // Reset counter
-
-                // This is a sample we *process*, store its value for potential holding later
-                for (int j = 0; j < channels; j++)
-                {
-                    // Store the current sample value *before* any processing
-                    // This will become the value held during the next reduction phase
-                    lastSample[j] = data[i + j];
-                }
-            }
-            else
-            {
-                 // Hold the *previously stored* sample value for this reduction phase
-                for (int j = 0; j < channels; j++)
-                {
-                    data[i + j] = lastSample[j];
-                }
-            }
-
-
-            // --- Process each channel for the current sample index (either new or held) ---
-            for (int j = 0; j < channels; j++)
-            {
-                float drySample = data[i + j]; // Store original sample before processing for Dry/Wet mix
-
-                // Use the value determined by sample rate reduction (either current or held)
-                float sampleToProcess = lastSample[j]; // If we reset index, this is the current sample. If holding, it's the previous.
-
-                // --- Bit Depth Reduction (Quantization) & Volume ---
-                // Apply quantization to the selected sample
-                float wetSample = Mathf.Round(sampleToProcess * step) / step;
-
-                // Apply volume control to the wet signal
-                wetSample *= volume;
-
-                // --- Dry/Wet Mix ---
-                // Blend the original dry signal with the processed wet signal
-                data[i + j] = drySample * (1.0f - dryWet) + wetSample * dryWet;
-            }
-        }
-    }
-
-    // Optional: Update step calculation in editor if values change while not playing
-    #if UNITY_EDITOR
     void OnValidate()
     {
-        CalculateStep();
+        // Update calculations when values are changed in the inspector
+        UpdateDownsampleInterval();
+        UpdateStepSize();
     }
-    #endif
+
+    void UpdateDownsampleInterval()
+    {
+        // Calculate how many samples to skip for the desired reduction factor
+        // Ensure sampleRateReductionFactor is not zero to avoid division by zero
+        if (sampleRateReductionFactor > 0.0001f)
+        {
+            downsampleInterval = Mathf.Max(1, Mathf.RoundToInt(1.0f / sampleRateReductionFactor));
+        }
+        else
+        {
+            downsampleInterval = int.MaxValue; // Effectively disable downsampling if factor is near zero
+        }
+        downsampleCounter = 0; // Reset counter when interval changes
+    }
+
+    void UpdateStepSize()
+    {
+        // Calculate the reciprocal of the quantization step size based on bit depth
+        // If bitDepth is 16 or higher, we effectively bypass the quantization
+        if (bitDepth < 16)
+        {
+            // Calculate the number of steps: 2^(bitDepth - 1) because audio is typically -1 to 1
+            // Or simply 2^bitDepth if treating the range 0 to 1 after shifting? Let's stick to the original logic's apparent intent.
+            // Original logic: stepSize = 1 << (bitDepth - 1); floatSample /= stepSize; -> This scales based on powers of 2 related to integer representation.
+            // A common way for float audio (-1 to 1):
+            float numSteps = Mathf.Pow(2, bitDepth);
+            stepSizeReciprocal = 1.0f / numSteps; // This interpretation quantizes the -1 to 1 range into 2^bitDepth levels
+                                                  // Using pre-calculated reciprocal is slightly faster in the loop
+        }
+        else
+        {
+            stepSizeReciprocal = 0; // Indicates no quantization needed
+        }
+    }
+
+
+    void OnAudioFilterRead(float[] data, int channels)
+    {
+        bool applyDownsampling = downsampleInterval > 1;
+        bool applyQuantization = bitDepth < 16 && stepSizeReciprocal > 0; // Check if quantization should be applied
+
+        if (!applyDownsampling && !applyQuantization)
+        {
+            return; // Nothing to do
+        }
+
+        for (int i = 0; i < data.Length; i += channels)
+        {
+            // --- Sample Rate Reduction (Downsampling) ---
+            if (applyDownsampling)
+            {
+                if (downsampleCounter % downsampleInterval == 0)
+                {
+                    // This is a sample we process, update lastSampleValue for relevant channels
+                    lastSampleValueL = data[i]; // Store Left (or Mono) channel value
+                    if (channels > 1)
+                    {
+                        lastSampleValueR = data[i + 1]; // Store Right channel value if stereo
+                    }
+                    // Reset counter relative to interval AFTER processing this sample
+                    downsampleCounter = 1; // Start count for next interval
+                }
+                else
+                {
+                    // This is a sample we skip (hold previous value)
+                    data[i] = lastSampleValueL; // Hold Left (or Mono)
+                    if (channels > 1)
+                    {
+                        data[i + 1] = lastSampleValueR; // Hold Right
+                    }
+                    downsampleCounter++;
+                    // Continue to next frame ONLY if we are not applying quantization to the held sample
+                    // If we ARE quantizing, we should quantize the held sample too.
+                    if (!applyQuantization) continue;
+                }
+            }
+
+            // --- Bit Depth Reduction (Quantization) ---
+            // This part runs for samples that were just captured (downsampleCounter == 1 or downsampling is off)
+            // OR for held samples if quantization is enabled.
+            if (applyQuantization)
+            {
+                // Process Left (or Mono) channel
+                float currentSampleL = data[i];
+                // Quantize: Scale up, round, scale down
+                // This method quantizes the -1 to 1 range
+                data[i] = Mathf.Round(currentSampleL / stepSizeReciprocal) * stepSizeReciprocal;
+
+
+                // Process Right channel if stereo
+                if (channels > 1)
+                {
+                    float currentSampleR = data[i + 1];
+                    data[i + 1] = Mathf.Round(currentSampleR / stepSizeReciprocal) * stepSizeReciprocal;
+                }
+
+                 // Update lastSampleValue AFTER quantization if downsampling is also active,
+                 // so the held value is the quantized one.
+                 // (This logic might need refinement based on exact desired interaction)
+                if(applyDownsampling && downsampleCounter == 1) // If this was the sample we just captured
+                {
+                   lastSampleValueL = data[i];
+                   if(channels > 1) lastSampleValueR = data[i+1];
+                }
+            }
+        }
+    }
 }

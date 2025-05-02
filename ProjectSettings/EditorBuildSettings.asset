@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Punkin Shop.unity
     guid: 39d1b95f2385a42788bf3caeca2fc266
   - enabled: 1
+    path: Assets/Scenes/Tavern.unity
+    guid: 6735a69d7c0054561b8aa457270fbd81
+  - enabled: 1
     path: Assets/CorgiEngine/Demos/StartScreen/SplashScreen.unity
     guid: 7b96552fd1198fa4eaae54a2f975645e
   - enabled: 1

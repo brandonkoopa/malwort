@@ -132,7 +132,16 @@ public class DoorController : MonoBehaviour
                     // Store the target position and teleporter name in the GameManager
                     GameManager.Instance.StorePointsOfEntry(targetSceneName, 0, Character.FacingDirections.Right);
                     Debug.Log("$, about to load scene!...");
-                    MMSceneLoadingManager.LoadScene(targetSceneName);
+                    
+                    // Use LevelManager to handle the scene transition if available
+                    if (LevelManager.Instance != null)
+                    {
+                        LevelManager.Instance.GotoLevel(targetSceneName);
+                    }
+                    else
+                    {
+                        MMSceneLoadingManager.LoadScene(targetSceneName);
+                    }
                 }
                 else
                 {
@@ -153,10 +162,10 @@ public class DoorController : MonoBehaviour
                         // Camera handling
                         if (targetRoomCamera != null)
                         {
-                            // Deactivate all CinemachineVirtualCameras
-                            foreach (var cam in FindObjectsOfType<CinemachineCamera>())
+                            // Only deactivate the target camera if it's active
+                            if (targetRoomCamera.gameObject.activeInHierarchy)
                             {
-                                cam.gameObject.SetActive(false);
+                                targetRoomCamera.gameObject.SetActive(false);
                             }
                             // Activate the target camera
                             targetRoomCamera.gameObject.SetActive(true);

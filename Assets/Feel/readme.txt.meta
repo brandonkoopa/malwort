@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: 697b6e7dea1fde146b7e3e5cf3ed9e9f
-DefaultImporter:
+guid: a6aa03a6a85f38c43a3bd39d28ee09d1
+timeCreated: 1515124842
+licenseType: Store
+TextScriptImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
@@ -10,5 +12,5 @@ AssetOrigin:
   productId: 183370
   packageName: Feel
   packageVersion: 5.4
-  assetPath: Assets/Feel/FeelDemos/FeelTemplatesDemo.unitypackage
+  assetPath: Assets/Feel/readme.txt
   uploadId: 729165
