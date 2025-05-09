@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ghost_Disappear2_0: 7447069911358041337
+      Ghost_Disappear2_1: 2044911981635136654
+      Ghost_Disappear2_2: -5852701776302951821
+      Ghost_Disappear2_3: 6779323624451010145
+      Ghost_Disappear2_4: -83500739387713700
+      Ghost_Disappear2_5: -891955173667265034
+      Ghost_Disappear2_6: -4800556839652366909
+      Ghost_Disappear2_7: 1928222984074597551
+      Ghost_Disappear2_8: 8064960894646362777
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

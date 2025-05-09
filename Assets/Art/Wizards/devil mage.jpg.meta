@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      devil mage_0: -7040380503162902209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

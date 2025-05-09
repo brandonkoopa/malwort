@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MapTollTroll_0: 5772047207303838388
+      MapTollTroll_1: 6234781017510560232
+      MapTollTroll_2: -7490877025552425338
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

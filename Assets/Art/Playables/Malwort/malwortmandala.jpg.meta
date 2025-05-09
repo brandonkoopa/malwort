@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      malwortmandala_0: -293737997452994738
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

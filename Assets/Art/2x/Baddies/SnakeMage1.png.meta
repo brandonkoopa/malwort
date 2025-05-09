@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SnakeMage1_0: -4582471840759653802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bonepalacetilesoutside_0: -8819451646424113276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

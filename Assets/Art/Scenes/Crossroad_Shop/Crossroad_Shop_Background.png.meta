@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Crossroad_Shop_Background_0: 6470371227880481110
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

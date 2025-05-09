@@ -6,14 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Crossroads.unity
-    guid: cb79cf23a9cc14500b688a0bc68f4de2
+    path: Assets/Scenes/Main Game.unity
+    guid: 655086420cea54f79949de97c6c91e39
+  - enabled: 1
+    path: Assets/Scenes/LevelSelectionMap.unity
+    guid: 52b9cd61f289d47388518beadc8cbe19
+  - enabled: 1
+    path: Assets/Scenes/MalwortLevelMap.unity
+    guid: 4aa186cbd8af44c3db5e16ec4fd72b6c
   - enabled: 1
     path: Assets/Scenes/Punkin Shop.unity
     guid: 39d1b95f2385a42788bf3caeca2fc266
   - enabled: 1
+    path: Assets/Scenes/RetroVania.unity
+    guid: 91fa7ee20c5064cdeb1a94d9af1262b2
+  - enabled: 1
     path: Assets/Scenes/Tavern.unity
     guid: 6735a69d7c0054561b8aa457270fbd81
+  - enabled: 0
+    path: Assets/Scenes/Crossroads.unity
+    guid: cb79cf23a9cc14500b688a0bc68f4de2
   - enabled: 1
     path: Assets/CorgiEngine/Demos/StartScreen/SplashScreen.unity
     guid: 7b96552fd1198fa4eaae54a2f975645e

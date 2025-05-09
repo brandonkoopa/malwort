@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gamey_iPhone_Res_Half_0: -120567174212092856
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

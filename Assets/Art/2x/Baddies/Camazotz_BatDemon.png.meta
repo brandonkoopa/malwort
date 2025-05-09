@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Camazotz_BatDemon_0: -4014055882520140168
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,5 +14,5 @@ AssetOrigin:
   productId: 26617
   packageName: Corgi Engine - 2D + 2.5D Platformer
   packageVersion: 9.3
-  assetPath: Assets/Feel/MMFeedbacks/MMFeedbacks/Core/MMFeedbacksInspectorColors.cs
+  assetPath: Assets/CorgiEngine/Demos/StartScreen/Feel/MMFeedbacks/MMFeedbacks/Core/MMFeedbacksInspectorColors.cs
   uploadId: 719335

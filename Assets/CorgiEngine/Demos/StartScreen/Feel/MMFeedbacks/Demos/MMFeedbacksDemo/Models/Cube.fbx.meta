@@ -101,5 +101,5 @@ AssetOrigin:
   productId: 26617
   packageName: Corgi Engine - 2D + 2.5D Platformer
   packageVersion: 9.3
-  assetPath: Assets/Feel/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Cube.fbx
+  assetPath: Assets/CorgiEngine/Demos/StartScreen/Feel/MMFeedbacks/Demos/MMFeedbacksDemo/Models/Cube.fbx
   uploadId: 719335

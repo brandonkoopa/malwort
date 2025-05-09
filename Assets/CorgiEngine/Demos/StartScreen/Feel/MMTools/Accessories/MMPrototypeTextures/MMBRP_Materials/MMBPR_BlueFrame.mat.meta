@@ -11,5 +11,5 @@ AssetOrigin:
   productId: 26617
   packageName: Corgi Engine - 2D + 2.5D Platformer
   packageVersion: 9.3
-  assetPath: Assets/Feel/MMTools/Accessories/MMPrototypeTextures/MMBRP_Materials/MMBPR_BlueFrame.mat
+  assetPath: Assets/CorgiEngine/Demos/StartScreen/Feel/MMTools/Accessories/MMPrototypeTextures/MMBRP_Materials/MMBPR_BlueFrame.mat
   uploadId: 719335

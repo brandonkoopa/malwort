@@ -94,5 +94,5 @@ AssetOrigin:
   productId: 26617
   packageName: Corgi Engine - 2D + 2.5D Platformer
   packageVersion: 9.3
-  assetPath: Assets/Feel/MMFeedbacks/Demos/SequencingDemo/Textures/Chip03_nrm.png
+  assetPath: Assets/CorgiEngine/Demos/StartScreen/Feel/MMFeedbacks/Demos/SequencingDemo/Textures/Chip03_nrm.png
   uploadId: 719335

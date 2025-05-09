@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Statue_Snake_Eye_0: -8843388023851291053
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

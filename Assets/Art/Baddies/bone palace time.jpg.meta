@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bone palace time_0: 7024180956324006670
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

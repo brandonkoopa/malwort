@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Malwort_Meditating_0: -6027423333997910843
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

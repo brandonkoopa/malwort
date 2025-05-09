@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vampirehunterbeast_0: 3607814200068162284
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BonelandBilly_0: -4074595108896917242
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

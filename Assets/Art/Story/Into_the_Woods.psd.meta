@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Into_the_Woods_0: -629579240779886316
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

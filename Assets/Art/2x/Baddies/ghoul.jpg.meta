@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ghoul_0: -3270371465853829570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

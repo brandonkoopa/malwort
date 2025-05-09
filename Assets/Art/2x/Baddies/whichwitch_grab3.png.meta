@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      whichwitch_grab3_0: -8143910330839078991
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

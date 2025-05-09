@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BloodSplat4_0: -8509952404374713667
+      BloodSplat4_1: 3672144172772880821
+      BloodSplat4_2: 2574315969301069792
+      BloodSplat4_3: -3599966798832414026
+      BloodSplat4_4: -2142530767484252934
+      BloodSplat4_5: 8727461770314263862
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

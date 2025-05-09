@@ -143,5 +143,5 @@ AssetOrigin:
   productId: 26617
   packageName: Corgi Engine - 2D + 2.5D Platformer
   packageVersion: 9.3
-  assetPath: Assets/Feel/MMTools/Foundation/MMAchievements/Sprites/AchievementBackgroundUnlocked.png
+  assetPath: Assets/CorgiEngine/Demos/StartScreen/Feel/MMTools/Foundation/MMAchievements/Sprites/AchievementBackgroundUnlocked.png
   uploadId: 719335

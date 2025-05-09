@@ -130,5 +130,5 @@ AssetOrigin:
   productId: 26617
   packageName: Corgi Engine - 2D + 2.5D Platformer
   packageVersion: 9.3
-  assetPath: Assets/Feel/MMFeedbacks/Editor/Core/UIToolkit/Textures/FeelSetupRequired@2x.png
+  assetPath: Assets/CorgiEngine/Demos/StartScreen/Feel/MMFeedbacks/Editor/Core/UIToolkit/Textures/FeelSetupRequired@2x.png
   uploadId: 719335

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PunkMasterStore_0: -3600040340173792757
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

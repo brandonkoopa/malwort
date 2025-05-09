@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Map_1_BonePalace_0: 8425141924823919317
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

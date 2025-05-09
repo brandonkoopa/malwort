@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bloodlands_2_BG_0: 5820957620336306702
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BoneyThrower2_0: -5201935378356142419
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Statue_Snake_Egg_0: -3378399897622145443
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

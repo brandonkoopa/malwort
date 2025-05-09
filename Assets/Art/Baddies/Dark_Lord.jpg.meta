@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dark_Lord_0: -6430769616415327142
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

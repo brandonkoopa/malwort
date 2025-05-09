@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ghoul_Hurt_0: 6661909385826072599
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

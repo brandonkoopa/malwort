@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bonethrower_0: 3563372819621048677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

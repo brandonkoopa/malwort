@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GameyGame_SMALL_2_0: 2655085602395854570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

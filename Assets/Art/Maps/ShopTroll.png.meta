@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ShopTroll_0: 3185485368287314198
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

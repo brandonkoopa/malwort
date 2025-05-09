@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GameyGame_NES_plus_Width_0: -1656310501327451067
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

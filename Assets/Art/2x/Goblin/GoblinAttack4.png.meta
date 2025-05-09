@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GoblinAttack4_0: 6510518016726926575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      whichwitch_attack2_0: -1349788215099996691
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

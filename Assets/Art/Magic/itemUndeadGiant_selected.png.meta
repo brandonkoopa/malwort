@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      itemUndeadGiant_selected_0: -5001800964655148198
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

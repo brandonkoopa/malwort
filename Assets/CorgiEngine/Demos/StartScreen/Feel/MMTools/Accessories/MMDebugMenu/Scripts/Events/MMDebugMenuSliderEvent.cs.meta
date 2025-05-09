@@ -14,5 +14,5 @@ AssetOrigin:
   productId: 26617
   packageName: Corgi Engine - 2D + 2.5D Platformer
   packageVersion: 9.3
-  assetPath: Assets/Feel/MMTools/Accessories/MMDebugMenu/Scripts/Events/MMDebugMenuSliderEvent.cs
+  assetPath: Assets/CorgiEngine/Demos/StartScreen/Feel/MMTools/Accessories/MMDebugMenu/Scripts/Events/MMDebugMenuSliderEvent.cs
   uploadId: 719335

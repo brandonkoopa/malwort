@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BlueZombie3_0: 4115240899463885063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

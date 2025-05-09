@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lizard_Hurt_0: -8438105438468425176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -40,5 +40,5 @@ AssetOrigin:
   productId: 26617
   packageName: Corgi Engine - 2D + 2.5D Platformer
   packageVersion: 9.3
-  assetPath: Assets/Feel/MMTools/Demos/MMTween/Fonts/Lato/TTF/Lato-Medium.ttf
+  assetPath: Assets/CorgiEngine/Demos/StartScreen/Feel/MMTools/Demos/MMTween/Fonts/Lato/TTF/Lato-Medium.ttf
   uploadId: 719335

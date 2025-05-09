@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RetroPinkPlatform_0: 4653748160245203660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

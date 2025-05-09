@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Story_Never_Find_Me_0: -8211782647746916147
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

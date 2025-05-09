@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Malwort_960x640_0: 7897246617986680973
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

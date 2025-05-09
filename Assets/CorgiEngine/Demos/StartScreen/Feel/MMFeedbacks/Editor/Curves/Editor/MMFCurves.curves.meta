@@ -11,5 +11,5 @@ AssetOrigin:
   productId: 26617
   packageName: Corgi Engine - 2D + 2.5D Platformer
   packageVersion: 9.3
-  assetPath: Assets/Feel/MMFeedbacks/Editor/Curves/Editor/MMFCurves.curves
+  assetPath: Assets/CorgiEngine/Demos/StartScreen/Feel/MMFeedbacks/Editor/Curves/Editor/MMFCurves.curves
   uploadId: 719335

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BigBadBabasHouse3_0: -8081746593101171512
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

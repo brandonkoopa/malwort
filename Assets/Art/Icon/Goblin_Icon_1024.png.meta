@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Goblin_Icon_1024_0: 6137826665244390126
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

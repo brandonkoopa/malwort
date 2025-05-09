@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tollman_0: -7381282415222489825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

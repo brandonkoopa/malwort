@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Story_Into_the_Woods_0: -4151121565718865609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

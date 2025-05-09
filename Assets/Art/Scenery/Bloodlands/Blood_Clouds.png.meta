@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Blood_Clouds_0: 3885873643847856896
+      Blood_Clouds_1: -7736898899109446800
+      Blood_Clouds_2: -6443660407808738080
+      Blood_Clouds_3: 4794349249302994278
+      Blood_Clouds_4: 3046352802270715494
+      Blood_Clouds_5: 3658860475522380536
+      Blood_Clouds_6: 3715926885776464910
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

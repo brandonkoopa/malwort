@@ -100,5 +100,5 @@ AssetOrigin:
   productId: 26617
   packageName: Corgi Engine - 2D + 2.5D Platformer
   packageVersion: 9.3
-  assetPath: Assets/Feel/MMTools/Demos/MMGhostCamera/Models/MMGhostCameraCity.fbx
+  assetPath: Assets/CorgiEngine/Demos/StartScreen/Feel/MMTools/Demos/MMGhostCamera/Models/MMGhostCameraCity.fbx
   uploadId: 719335

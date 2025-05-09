@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blood_drop_bright_0: 5842096991549144923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

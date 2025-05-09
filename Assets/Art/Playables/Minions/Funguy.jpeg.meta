@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Funguy_0: -2767412046900648794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

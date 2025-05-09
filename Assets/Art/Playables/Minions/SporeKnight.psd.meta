@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SporeKnight_0: -3544650327096256331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

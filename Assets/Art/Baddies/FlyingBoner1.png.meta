@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FlyingBoner1_0: 3460760864461286758
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

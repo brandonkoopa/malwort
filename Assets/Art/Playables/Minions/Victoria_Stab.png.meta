@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Victoria_Stab_0: 4726944775050144602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

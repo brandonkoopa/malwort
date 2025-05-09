@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Vamp_Lands_with_containers_0: -6133925284713997653
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

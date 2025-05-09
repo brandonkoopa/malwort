@@ -94,5 +94,5 @@ AssetOrigin:
   productId: 26617
   packageName: Corgi Engine - 2D + 2.5D Platformer
   packageVersion: 9.3
-  assetPath: Assets/Feel/MMTools/Accessories/MMPrototypeTextures/Textures/MMProtoTextures/MMProtoTextures_DarkGreySquares.png
+  assetPath: Assets/CorgiEngine/Demos/StartScreen/Feel/MMTools/Accessories/MMPrototypeTextures/Textures/MMProtoTextures/MMProtoTextures_DarkGreySquares.png
   uploadId: 719335

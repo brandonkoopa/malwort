@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Malwort_Tiny_for_2X_0: 2078441652622968555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

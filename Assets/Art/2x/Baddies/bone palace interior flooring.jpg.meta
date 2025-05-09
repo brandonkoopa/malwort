@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bone palace interior flooring_0: -5477688790787980802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
