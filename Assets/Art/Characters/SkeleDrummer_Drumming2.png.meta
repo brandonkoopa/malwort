@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 75ec175ed02b642bd9a86eb46a923000
+guid: 80e49f57428084e1481e8b1555d431ed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5182428918696974209
-    second: Tree_Dead_Lights_0
+      213: 7182778192730921082
+    second: SkeleDrummer_Drumming2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tree_Dead_Lights_0
+      name: SkeleDrummer_Drumming2_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 268
-        height: 200
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18715a4d4afabe740800000000000000
-      internalID: 5182428918696974209
+      spriteID: a781626d5ba5ea360800000000000000
+      internalID: 7182778192730921082
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tree_Dead_Lights_0: 5182428918696974209
+      SkeleDrummer_Drumming2_0: 7182778192730921082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

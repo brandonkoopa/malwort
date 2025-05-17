@@ -165,7 +165,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.4
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Standalone: com.MoreMountains.CorgiEngine
+    Standalone: com.DefaultCompany.Malwort
   buildNumber:
     Standalone: 0
     VisionOS: 0

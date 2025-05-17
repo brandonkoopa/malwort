@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 75ec175ed02b642bd9a86eb46a923000
+guid: abd1aa2d173a94604a354ef962a47df7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5182428918696974209
-    second: Tree_Dead_Lights_0
+      213: -5416035800067992894
+    second: Pianist_Playing3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tree_Dead_Lights_0
+      name: Pianist_Playing3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 268
-        height: 200
+        width: 58
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18715a4d4afabe740800000000000000
-      internalID: 5182428918696974209
+      spriteID: 2c2162e922066d4b0800000000000000
+      internalID: -5416035800067992894
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tree_Dead_Lights_0: 5182428918696974209
+      Pianist_Playing3_0: -5416035800067992894
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

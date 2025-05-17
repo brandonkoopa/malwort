@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d868b125102e74a13a210aa60c6e8f2d
+guid: 2093824307d364be5aec8558d5b5bbad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6057502256722192546
-    second: UntitledArtwork12_0
+      213: -4572698663545246370
+    second: Pianist_Playing2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UntitledArtwork12_0
+      name: Pianist_Playing2_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 28
+        width: 58
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2a8ad0e5532901450800000000000000
-      internalID: 6057502256722192546
+      spriteID: e5d6b7eeac28a80c0800000000000000
+      internalID: -4572698663545246370
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UntitledArtwork12_0: 6057502256722192546
+      Pianist_Playing2_0: -4572698663545246370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

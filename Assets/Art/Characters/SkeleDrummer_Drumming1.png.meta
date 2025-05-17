@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 42b354d13549142abb0a90554607ea59
+guid: 30f1e0d95c53848809b172e32a13711d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4962647773852856466
-    second: UntitledArtwork6_0
+      213: 707971407682720908
+    second: SkeleDrummer_Drumming1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UntitledArtwork6_0
+      name: SkeleDrummer_Drumming1_0
       rect:
         serializedVersion: 2
         x: 1
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6f0e169422212bb0800000000000000
-      internalID: -4962647773852856466
+      spriteID: c84df0a8e3833d900800000000000000
+      internalID: 707971407682720908
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UntitledArtwork6_0: -4962647773852856466
+      SkeleDrummer_Drumming1_0: 707971407682720908
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

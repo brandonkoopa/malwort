@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0e3b5ce62ab0040f89bab4edcfebfd92
+guid: f0f7bb87e5f404bc1849497f73474130
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1052799324459590905
-    second: UntitledArtwork10_0
+      213: 4123081895727808745
+    second: Toll-Troll_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UntitledArtwork10_0
+      name: Toll-Troll_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 28
-        height: 32
+        width: 26
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 70b90d5a794b361f0800000000000000
-      internalID: -1052799324459590905
+      spriteID: 9e043be9321283930800000000000000
+      internalID: 4123081895727808745
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      UntitledArtwork10_0: -1052799324459590905
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
