@@ -12,6 +12,7 @@ var flip_default_direction = true  # Set to true if your sprite faces left by de
 var is_tracking_player = false
 var last_direction_change = 0.0
 var direction_change_cooldown = 0.5  # Minimum time between direction changes
+var direction_change_buffer = 0.2    # Extra buffer to prevent rapid flipping
 
 func _ready():
 	# Start the patrol timer
@@ -72,7 +73,7 @@ func _physics_process(delta):
 	
 	# Check for walls and turn around (only if not tracking player or if we've been stuck)
 	var now = Time.get_ticks_msec() / 1000.0
-	if is_on_wall() and (not is_tracking_player or now - last_direction_change > direction_change_cooldown):
+	if is_on_wall() and (not is_tracking_player or (now - last_direction_change > direction_change_cooldown + direction_change_buffer)):
 		flip_direction()
 	
 	# Check for edges (optional - uncomment if you want enemies to turn at edges)
@@ -100,19 +101,28 @@ func update_direction_towards_player():
 	
 	# Only change direction if the player is on a different side and enough time has passed
 	var now = Time.get_ticks_msec() / 1000.0
-	if player_direction != direction and now - last_direction_change > direction_change_cooldown:
+	if player_direction != direction and now - last_direction_change > direction_change_cooldown + direction_change_buffer:
 		direction = player_direction
 		last_direction_change = now
 		$PatrolTimer.start()  # Restart timer when changing direction
 
 func flip_direction():
-	direction *= -1
-	last_direction_change = Time.get_ticks_msec() / 1000.0
-	$PatrolTimer.start()  # Restart timer when changing direction
+	var now = Time.get_ticks_msec() / 1000.0
+	if now - last_direction_change > direction_change_cooldown + direction_change_buffer:
+		direction *= -1
+		last_direction_change = now
+		$PatrolTimer.start()  # Restart timer when changing direction
 
 func _on_patrol_timer_timeout():
 	# Change direction periodically (only if not tracking player)
 	if not is_player_in_range():
+		# Check if player is behind and close to entering detection range
+		if player:
+			var player_offset = player.global_position.x - global_position.x
+			var player_behind = (direction == 1 and player_offset < 0) or (direction == -1 and player_offset > 0)
+			var player_close = abs(player_offset) < DETECTION_RANGE * 1.2  # 20% buffer
+			if player_behind and player_close:
+				return  # Don't flip if player is about to enter detection range from behind
 		flip_direction()
 
 func take_damage(amount = 1):
