@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2f5nwam1sk7c"]
+
+[ext_resource type="Script" uid="uid://bmpufqpk27xfb" path="res://SampleProject/Scripts/Enemy.gd" id="1_enemy"]
+[ext_resource type="Texture2D" uid="uid://dvd435a0hec4g" path="res://art/Baddies/Undead1.png" id="2_w5dr6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enemy"]
+size = Vector2(1, 1)
+
+[node name="Enemy" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_enemy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_enemy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_w5dr6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath(".")
+
+[node name="PatrolTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
