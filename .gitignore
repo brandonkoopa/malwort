@@ -1,0 +1,43 @@
+# Godot-specific
+.godot/
+*.import
+*.imported/
+*.translation
+export_presets.cfg
+
+# Godot C# (Mono)
+.mono/
+.mono_temp/
+
+# Godot 3.x editor cache
+.editor/
+
+# System/IDE files
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*.bak
+*.log
+*.user
+*.sublime-workspace
+*.sublime-project
+.vscode/
+.idea/
+
+# Godot runtime/user data
+user://*
+
+# Exported builds and packages
+export/
+bin/
+dist/
+*.exe
+*.apk
+*.pck
+*.zip
+*.tar.gz
+*.db
+
+# Other
+# Add any other custom folders or files to ignore below 
