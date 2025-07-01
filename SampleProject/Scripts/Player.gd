@@ -26,8 +26,13 @@ var speed: float = SPEED_MIN
 var arrow_scene = preload("res://SampleProject/Objects/Arrow.tscn")
 var can_shoot = true
 var shoot_cooldown = 0.5  # Half second cooldown between shots
+var x_key_was_pressed = false  # Track X key state for single press detection
 
 func _ready() -> void:
+	# Set up collision detection
+	collision_layer = 1  # Set to layer 1 for player
+	collision_mask = 1   # Collide with layer 1 (enemies)
+	
 	on_enter()
 
 func _physics_process(delta: float) -> void:
@@ -92,14 +97,31 @@ func _physics_process(delta: float) -> void:
 	handle_shooting()
 
 func handle_shooting():
-	# Check for X key press (shooting)
-	if Input.is_action_just_pressed("ui_focus_next") and can_shoot:  # ui_focus_next is usually Tab
+	# Check for shoot action (X key) or direct X key press
+	var x_key_pressed = Input.is_key_pressed(KEY_X)
+	var shoot_action_pressed = Input.is_action_just_pressed("shoot")
+	
+	# Detect X key just pressed (not held)
+	var x_key_just_pressed = x_key_pressed and not x_key_was_pressed
+	x_key_was_pressed = x_key_pressed
+	
+	if (shoot_action_pressed or x_key_just_pressed) and can_shoot:
 		print("Shooting arrow!")  # Debug output
 		shoot_arrow()
 		can_shoot = false
 		# Start cooldown timer
 		await get_tree().create_timer(shoot_cooldown).timeout
 		can_shoot = true
+	elif (shoot_action_pressed or x_key_just_pressed) and not can_shoot:
+		print("Shoot action pressed but on cooldown")  # Debug output
+	
+	# Debug: Check if X key is being pressed directly
+	if x_key_pressed:
+		print("X key is being pressed")
+	
+	# Debug: Check if any key is being pressed
+	if Input.is_anything_pressed():
+		print("Some input is being detected")
 
 func shoot_arrow():
 	# Create arrow instance
@@ -115,6 +137,8 @@ func shoot_arrow():
 	
 	# Add arrow to the current scene
 	get_parent().add_child(arrow)
+	
+	print("Arrow spawned at: ", arrow.global_position, " with direction: ", arrow_direction)  # Debug output
 
 func kill():
 	# Player dies, reset the position to the entrance.

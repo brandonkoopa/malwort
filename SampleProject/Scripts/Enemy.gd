@@ -26,6 +26,10 @@ func _ready():
 				player = node
 				break
 	
+	# Set up collision detection
+	collision_layer = 1  # Set to layer 1 for enemies
+	collision_mask = 3   # Collide with layer 1 (other enemies) and layer 2 (projectiles) - binary 11
+	
 	# Automatically adjust collision shape to match sprite size
 	adjust_collision_to_sprite()
 

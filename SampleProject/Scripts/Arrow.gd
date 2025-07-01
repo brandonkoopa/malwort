@@ -10,6 +10,10 @@ func _ready():
 	# Connect the lifetime timer
 	$LifetimeTimer.timeout.connect(_on_lifetime_timer_timeout)
 	
+	# Set up collision detection
+	collision_layer = 2  # Set to layer 2 for projectiles
+	collision_mask = 1   # Collide with layer 1 (enemies)
+	
 	# Set the arrow direction based on player facing
 	if direction < 0:
 		$Sprite2D.flip_h = true
@@ -26,18 +30,13 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
-		if collider.has_method("take_damage"):
+		if collider and collider.has_method("take_damage"):
 			# Hit an enemy!
+			print("Arrow hit enemy: ", collider.name)  # Debug output
 			collider.take_damage(damage)
 			queue_free()  # Destroy the arrow
 			return
 
 func _on_lifetime_timer_timeout():
 	# Arrow disappears after lifetime
-	queue_free()
-
-func _on_body_entered(body):
-	# Alternative collision detection
-	if body.has_method("take_damage"):
-		body.take_damage(damage)
-		queue_free() 
+	queue_free() 
