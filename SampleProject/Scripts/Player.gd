@@ -26,7 +26,8 @@ var speed: float = SPEED_MIN
 var arrow_scene = preload("res://SampleProject/Objects/Arrow.tscn")
 var can_shoot = true
 var shoot_cooldown = 0.5  # Half second cooldown between shots
-var x_key_was_pressed = false  # Track X key state for single press detection
+var enter_key_was_pressed = false  # Track Enter key state for single press detection
+var space_key_was_pressed = false  # Track Space key state for single press detection
 
 func _ready() -> void:
 	# Set up collision detection
@@ -48,16 +49,22 @@ func _physics_process(delta: float) -> void:
 		airtime = 0
 	
 	var on_floor_ct: bool = is_on_floor() or airtime < COYOTE_TIME
-	if Input.is_action_just_pressed("ui_accept") and (on_floor_ct or double_jump):
+	# Spacebar for jumping
+	var space_key_pressed = Input.is_key_pressed(KEY_SPACE)
+	var space_key_just_pressed = space_key_pressed and not space_key_was_pressed
+	space_key_was_pressed = space_key_pressed
+	
+	if (space_key_just_pressed) and (on_floor_ct or double_jump):
 		if not on_floor_ct:
 			double_jump = false
 		
-		if Input.is_action_pressed("ui_down"):
+		if Input.is_action_pressed("ui_down") or Input.is_key_pressed(KEY_S):
 			position.y += 8
 		else:
 			velocity.y = JUMP_VELOCITY
 	
-	if Input.is_action_just_released("ui_accept"):
+	var space_key_just_released = not space_key_pressed and space_key_was_pressed
+	if space_key_just_released:
 		if not is_on_floor() and velocity.y < 0:
 			velocity.y = min(0, velocity.y - JUMP_VELOCITY * SHORT_HOP)
 			
@@ -65,7 +72,14 @@ func _physics_process(delta: float) -> void:
 	if is_on_wall():
 		speed = SPEED_MIN
 	
+	# WASD movement
 	var direction := Input.get_axis("ui_left", "ui_right")
+	# Also check for A/D keys
+	if Input.is_key_pressed(KEY_A):
+		direction = -1
+	elif Input.is_key_pressed(KEY_D):
+		direction = 1
+	
 	if direction:
 		speed = min(SPEED_MAX, speed + ACCEL * delta)
 		velocity.x = direction * speed
@@ -97,31 +111,33 @@ func _physics_process(delta: float) -> void:
 	handle_shooting()
 
 func handle_shooting():
-	# Check for shoot action (X key) or direct X key press
-	var x_key_pressed = Input.is_key_pressed(KEY_X)
+	# Check for Enter key, left mouse click, or shoot action
+	var enter_key_pressed = Input.is_key_pressed(KEY_ENTER)
+	var mouse_clicked = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
 	var shoot_action_pressed = Input.is_action_just_pressed("shoot")
 	
-	# Detect X key just pressed (not held)
-	var x_key_just_pressed = x_key_pressed and not x_key_was_pressed
-	x_key_was_pressed = x_key_pressed
+	# Detect Enter key just pressed (not held)
+	var enter_key_just_pressed = enter_key_pressed and not enter_key_was_pressed
+	enter_key_was_pressed = enter_key_pressed
 	
-	if (shoot_action_pressed or x_key_just_pressed) and can_shoot:
+	# Check if any firing input is pressed
+	var should_fire = (shoot_action_pressed or enter_key_just_pressed or mouse_clicked) and can_shoot
+	
+	if should_fire:
 		print("Shooting arrow!")  # Debug output
 		shoot_arrow()
 		can_shoot = false
 		# Start cooldown timer
 		await get_tree().create_timer(shoot_cooldown).timeout
 		can_shoot = true
-	elif (shoot_action_pressed or x_key_just_pressed) and not can_shoot:
+	elif (shoot_action_pressed or enter_key_just_pressed or mouse_clicked) and not can_shoot:
 		print("Shoot action pressed but on cooldown")  # Debug output
 	
-	# Debug: Check if X key is being pressed directly
-	if x_key_pressed:
-		print("X key is being pressed")
-	
-	# Debug: Check if any key is being pressed
-	if Input.is_anything_pressed():
-		print("Some input is being detected")
+	# Debug: Check if firing keys are being pressed
+	if enter_key_pressed:
+		print("Enter key is being pressed")
+	if mouse_clicked:
+		print("Left mouse button is being pressed")
 
 func shoot_arrow():
 	# Create arrow instance
