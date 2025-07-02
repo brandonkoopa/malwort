@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c3v5jdyj2jl4e" path="res://SampleProject/Sprites/MC.png" id="1_qiynj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yj7bn"]
-size = Vector2(14, 43)
+size = Vector2(14, 27)
 
 [sub_resource type="Animation" id="Animation_mul1d"]
 resource_name = "Fall"
@@ -102,11 +102,10 @@ metadata/player = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 2
-position = Vector2(4, 24.5)
+position = Vector2(4, 16.5)
 shape = SubResource("RectangleShape2D_yj7bn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_qiynj")
 hframes = 7
 vframes = 2

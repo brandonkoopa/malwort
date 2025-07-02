@@ -4,19 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://b34cqoorjvh35" path="res://art/Projectiles/Arrow.png" id="2_arrow_sprite"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arrow"]
-size = Vector2(12.7946, 4.02484)
+size = Vector2(6.39731, 2.01242)
 
 [node name="Arrow" type="CharacterBody2D"]
 z_index = 2
 script = ExtResource("1_arrow")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
 scale = Vector2(2.34473, 1.98766)
 shape = SubResource("RectangleShape2D_arrow")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_arrow_sprite")
 
 [node name="LifetimeTimer" type="Timer" parent="."]

@@ -145,7 +145,7 @@ func shoot_arrow():
 	
 	# Set arrow position (slightly in front of player)
 	var arrow_direction = 1 if not $Sprite2D.flip_h else -1
-	var spawn_offset = Vector2(30 * arrow_direction, 23)
+	var spawn_offset = Vector2(30 * arrow_direction, 16)
 	arrow.global_position = global_position + spawn_offset
 	
 	# Set arrow direction
