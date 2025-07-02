@@ -144,15 +144,9 @@ func die():
 	$Sprite2D.visible = false
 	$CollisionShape2D.set_deferred("disabled", true)
 	
-	# Optional: respawn after some time
-	await get_tree().create_timer(5.0).timeout
-	respawn()
-
-func respawn():
-	is_dead = false
-	health = 3
-	$Sprite2D.visible = true
-	$CollisionShape2D.set_deferred("disabled", false)
+	# Enemy stays dead permanently - no respawn
+	# await get_tree().create_timer(5.0).timeout
+	# respawn()
 
 func _on_body_entered(body):
 	if body.has_method("kill") and not is_dead:
